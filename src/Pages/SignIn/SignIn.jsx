@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import ShocalLogin from "../Home/Shared/ShocalLogin";
 
 const SignIn = () => {
     const { signIn,setUser}= useContext(AuthContext)
@@ -71,6 +72,10 @@ const SignIn = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <div className="divider">OR</div>
+            <div className="flex justify-center mb-6">
+              <ShocalLogin></ShocalLogin>
+            </div>
           </div>
         </div>
       </div>

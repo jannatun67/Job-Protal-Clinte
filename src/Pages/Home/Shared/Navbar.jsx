@@ -80,12 +80,12 @@ const Navbar = () => {
         <div className="navbar-end">
           {
             user? <>
-          <button onClick={handelSignOut } className="btn">Log-Out</button>
+          <button onClick={handelSignOut } className="btn bg-blue-500 hover:bg-blue-600 text-white">Log-Out</button>
             </>
             :
              <>
-            <Link to="/register" className="btn mr-2 md:mr-4">Register</Link>
-            <Link to="/signIn" className="btn">Sign In</Link>
+            <Link to="/register" className="btn bg-blue-500 hover:bg-blue-600 mr-2 md:mr-4 text-white">Register</Link>
+            <Link to="/signIn" className="btn bg-blue-500 hover:bg-blue-600 text-white">Sign In</Link>
             </>
           }
          

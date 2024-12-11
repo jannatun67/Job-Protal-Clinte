@@ -3,6 +3,7 @@ import registerLottieData from "../../assets/Lottie/register.json";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import ShocalLogin from "../Home/Shared/ShocalLogin";
 
 
 const Register = () => {
@@ -85,6 +86,10 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <div className="divider">OR</div>
+            <div className="flex justify-center mb-6">
+              <ShocalLogin></ShocalLogin>
+            </div>
           </div>
         </div>
       </div>
