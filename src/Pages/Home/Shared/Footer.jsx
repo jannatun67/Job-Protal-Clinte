@@ -1,7 +1,16 @@
+import footerLogo from '../../../assets/Lottie/logo.png'
 const Footer = () => {
   return (
     <div>
-      <footer className="footer bg-gray-900  p-10 text-white">
+      <footer className="footer bg-gray-900 text-white  p-10">
+        <aside>
+         <img src={footerLogo} alt="" />
+          <p>
+            Job Portal Ltd.
+            <br />
+            Providing reliable Job since 1992
+          </p>
+        </aside>
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -23,7 +32,6 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-     
     </div>
   );
 };

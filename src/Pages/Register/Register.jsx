@@ -1,13 +1,30 @@
 import Lottie from "lottie-react";
 import registerLottieData from "../../assets/Lottie/register.json";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
+
 
 const Register = () => {
+  const { createUser,setUser}= useContext(AuthContext)
   const handelRegister = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(email, password,name);
+
+    createUser(email,password,name)
+
+    .then(result =>{
+      console.log(result.user);
+      setUser(result.user)
+
+    })
+    .catch((error) => {
+      Swal.fire("Please try again!");
+    });
   };
   return (
     <div>
@@ -21,6 +38,18 @@ const Register = () => {
               Register now!
             </h1>
             <form onSubmit={handelRegister} className="card-body ">
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="name"
+                  name="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
