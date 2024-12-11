@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Pages/Home/Shared/Navbar";
+import Footer from "./Pages/Home/Shared/Footer";
 
 
 const MainLayout = () => {
     return (
-        <div className="w-11/12 mx-auto">
+        <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };

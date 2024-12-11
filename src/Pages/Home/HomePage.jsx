@@ -2,7 +2,7 @@
 
 const HomePage = () => {
     return (
-        <div>
+        <div className="w-11/12 mx-auto">
             <h2>This is Home Page</h2>
         </div>
     );
