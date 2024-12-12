@@ -3,12 +3,17 @@ import login from "../../assets/Lottie/login.json"
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ShocalLogin from "../Home/Shared/ShocalLogin";
 
 const SignIn = () => {
-    const { signIn,setUser}= useContext(AuthContext)
-    const navigate= useNavigate()
+  const { signIn,setUser}= useContext(AuthContext)
+  const location = useLocation()
+  const navigate= useNavigate()
+  console.log(location);
+  const form = location.state || '/'
+    
+   
     const handelLogin = e =>{
         e.preventDefault();
         const form = e.target;
@@ -20,9 +25,9 @@ const SignIn = () => {
     
         .then(result =>{
           console.log(result.user);
-          setUser(result.user)
           navigate("/")
-    
+          setUser(result.user)
+          
         })
         .catch((error) => {
           Swal.fire("Please try again!");

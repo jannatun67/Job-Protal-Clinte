@@ -1,8 +1,9 @@
 import { CiLocationOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 
 const HotJobCard = ({job}) => {
-    const{title,location,jobType,category,applicationDeadline,description,company_logo,requirements,salaryRange,company}=job;
+    const{_id, title,location,jobType,category,applicationDeadline,description,company_logo,requirements,salaryRange,company}=job;
     return (
         <div className="border border-blue-400 p-4">
            <div className="space-y-3">
@@ -27,7 +28,9 @@ const HotJobCard = ({job}) => {
                 </p>
             </div>
             <div>
+                <Link to={`/jobs/${_id}`}>
                 <button className="btn bg-blue-500 text-white">Apply</button>
+                </Link>
             </div>
            </div>
            </div>

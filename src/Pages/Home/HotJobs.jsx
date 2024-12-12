@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import HotJobCard from "../../Componentes/HotJobCard/HotJobCard";
-import { key } from "localforage";
+
 
 
 const HotJobs = () => {

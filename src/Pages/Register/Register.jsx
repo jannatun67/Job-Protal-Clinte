@@ -14,6 +14,7 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    
     console.log(email, password,name);
 
     createUser(email,password,name)
@@ -21,7 +22,6 @@ const Register = () => {
     .then(result =>{
       console.log(result.user);
       setUser(result.user)
-
     })
     .catch((error) => {
       Swal.fire("Please try again!");
